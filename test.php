@@ -17,7 +17,7 @@ $endpointUrl = 'https://query.wikidata.org/sparql';
 $url = $endpointUrl . '?query=' . urlencode($sparqlQueryString) . "&format=json";
 
 echo $url;
-
+die;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
