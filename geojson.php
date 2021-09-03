@@ -29,7 +29,9 @@ $data = json_decode($json,true);
 
 
 
-//print_r($data);
+print_r($data);
+
+die;
 
 $locations = array();
 
