@@ -52,7 +52,7 @@ include("options.php");
 <div id="legenda">
   <h1>The Painted Planet</h1>
 
-  <p>Landscapes from Wikidata, depicting things with coordinates in ...</p>
+  <p>Landscapes from Wikidata, depicting things with coordinates, in ...</p>
 
   <form>
     <select name="country">
@@ -60,7 +60,7 @@ include("options.php");
     </select>
   </form>
 
-  <p>Missing paintings? Pleas read our <a href="">how-to add paintings to the map</a> section.</p>
+  <p>Missing paintings? Please read our <a href="howto.php">how-to add paintings to the map</a> section.</p>
   
 </div>
 
@@ -201,7 +201,7 @@ function whenClicked(){
       var bigpic = $("<img />").attr("src",value['img'] + '?width=1000');
       //bigpic.css("height","50%");
       $("#bigpic").append(bigpic);
-      var bigpictxt = $("<p></p>").text(value['title']);
+      var bigpictxt = $("<p></p>").text(value['maker'] + ", " + value['title'] + ", " + value['date']);
       $("#bigpictxt").append(bigpictxt);
       $("#overlay").show();
       $("#overlaycontent").show();

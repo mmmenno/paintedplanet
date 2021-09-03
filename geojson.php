@@ -3,10 +3,16 @@
 ini_set('memory_limit', '1024M');
 
 $sparql = "
-SELECT ?i ?iLabel ?img ?depicts ?depictsLabel ?coords WHERE {
+SELECT ?i ?iLabel ?creatorLabel ?createdate ?img ?depicts ?depictsLabel ?coords WHERE {
   ?i wdt:P31 wd:Q3305213 .
   ?i wdt:P136 wd:Q191163 .
   ?i wdt:P180 ?depicts .
+  OPTIONAL{
+    ?i wdt:P170 ?creator .
+  }
+  OPTIONAL{
+    ?i wdt:P571 ?createdate .
+  }
   ?depicts wdt:P17 wd:" . $qcountry . " .
   ?depicts wdt:P625 ?coords .
   ?i wdt:P18 ?img .
@@ -43,7 +49,9 @@ foreach ($data['results']['bindings'] as $k => $v) {
 	$paintingid = str_replace("http://www.wikidata.org/entity/","",$v['i']['value']);
 	$locations[$qid]['paintings'][$paintingid] = array(
 		"title" => $v['iLabel']['value'],
-		"img" => $v['img']['value']
+		"img" => $v['img']['value'],
+		"maker" => $v['creatorLabel']['value'],
+		"date" => substr($v['createdate']['value'],0,4)
 	);
 
 }
