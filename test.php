@@ -10,31 +10,30 @@ SELECT ?i ?iLabel WHERE {
 LIMIT 10
 ";
 
-$endpoint = 'https://query.wikidata.org/sparql';
+//$endpoint = 'https://query.wikidata.org/sparql';
 
-$json = getSparqlResults($endpoint,$sparql);
-$data = json_decode($json,true);
+//$json = getSparqlResults($endpoint,$sparql);
+
+$endpointUrl = 'https://query.wikidata.org/sparql';
+$url = $endpointUrl . '?query=' . urlencode($sparqlQueryString) . "&format=json";
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,$url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+curl_setopt($ch,CURLOPT_USERAGENT,'MonumentMap');
+$headers = [
+    'Accept: application/sparql-results+json'
+];
+
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+$response = curl_exec ($ch);
+curl_close ($ch);
+
+$data = json_decode($response, true);
 
 print_r($data);
 
-die;
-
-$options = "";
-
-foreach ($data['results']['bindings'] as $k => $v) {
-
-    $qnr = str_replace("http://www.wikidata.org/entity/","",$v['country']['value']);
-
-    if($qcountry==$qnr){
-        $options .= "<option selected=\"s\" value=\"" . $qnr . "\">";
-        $options .= $v['countryLabel']['value'] . " (" . $v['nr']['value'] . ")</option>\n";
-        $countryname = $v['countryLabel']['value'];
-    }else{
-        $options .= "<option value=\"" . $qnr . "\">";
-        $options .= $v['countryLabel']['value'] . " (" . $v['nr']['value'] . ")</option>\n";
-    }
-
-}
 
 
 function getSparqlResults($endpoint,$query){
