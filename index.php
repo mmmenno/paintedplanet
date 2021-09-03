@@ -10,11 +10,11 @@ if(isset($_GET['country'])){
 }
 
 if(!file_exists(__DIR__ . "/geojson/" . $qcountry . ".geojson") || isset($_GET['uncache'])){
-  include("geojson.php");
+  //include("geojson.php");
 }
 
 
-include("options.php");
+//include("options.php");
 
 
 ?><!DOCTYPE html>
