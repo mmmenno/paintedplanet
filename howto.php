@@ -68,9 +68,9 @@
   <p>This website shows landscape paintings from Wikidata, as <a href="https://w.wiki/3$M4">queried</a> from the Wikidata sparql endpoint.</p>
 
 
-  <p>The landscapes show what places once looked like (to the painter). Maybe they'll provide pleasant stops during an armchair travelling trip. Maybe they'll add something to your 'sense of place' of a place.</p>
+  <p>The landscapes give an idea of what places once looked like (to the painter). Maybe they will provide a pleasant stop during an armchair travelling trip. Maybe they will add something to your 'sense of place' of a place.</p>
 
-  <p>Maybe they'll spark a wish to <a href="https://rewildingeurope.com/what-is-rewilding-2/">rewild</a> parts of the planet.</p>
+  <p>Maybe they will even spark a wish to <a href="https://rewildingeurope.com/what-is-rewilding-2/">rewild</a> parts of the planet.</p>
   
 </div>
 
