@@ -14,7 +14,7 @@ if(!file_exists(__DIR__ . "/geojson/" . $qcountry . ".geojson") || isset($_GET['
 }
 
 
-//include("options.php");
+include("options.php");
 
 
 ?><!DOCTYPE html>
