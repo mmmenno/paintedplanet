@@ -1,0 +1,143 @@
+
+html, body{
+	margin:0;
+	padding-top: 0;
+	font-size: 14px;
+	background-color: #000;
+	color: #ccc;
+	height: 100%;
+	font-family: sans-serif;
+}
+
+@media only screen and (max-width: 900px) {
+  	#bigmap {
+		width: 100%;
+		height: 60%;
+	}
+	#legenda{
+		background-color: #000;
+		padding: 20px;
+		position: static;
+	}
+}
+@media only screen and (min-width: 900px) {
+  	#bigmap {
+  		position: fixed;
+		width: 100%;
+		height: 100%;
+	}
+	#legenda{
+		position: absolute;
+		z-index: 10000;
+		left: 30px;
+		top: 30px;
+		width: 250px;
+		background-color: #000;
+		border-radius: 12px;
+		padding: 20px;
+	}
+	#location{
+		position: absolute;
+		z-index: 10000;
+		right: 30px;
+		top: 30px;
+		width: 250px;
+		background-color: #000;
+		border-radius: 12px;
+		padding: 20px;
+		margin-bottom: 30px;
+		display: none;
+		max-height: 85%;
+		overflow-y: scroll;
+	}
+}
+#overlay{
+	background-color: #000;
+	z-index: 10010;
+	opacity: 0.9;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: none;
+}
+#overlaycontent{
+	z-index: 10020;
+	position: absolute;
+	top: 6%;
+	left: 50%;
+	display: none;
+	text-align: center;
+}
+#bigpic img{
+	height: 80vh;
+	position: relative;
+	left: -50%;
+}
+#bigpictxt{
+	position: relative;
+	left: -50%;
+}
+h1{
+	font-size: 24px;
+	margin-top: 0;
+}
+#location img{
+	width: 100%;
+	cursor: pointer;
+}
+.bag, .nobag, .bagcomplex, .nobagok {
+	width: 30px;
+	height: 10px;
+	border-width: 2px;
+	margin-right: 10px;
+	float: left;
+	margin-top: 4px;
+	clear: both;
+}
+.bag{
+	background-color: #1DA1CB;
+}
+.legendapoint{
+	background-color: #FC0611;
+	width: 10px;
+	height: 10px;
+	margin-right: 16px;
+	border-radius: 5px;
+	float: left;
+	clear: both;
+	margin-top: 4px;
+}
+#monumentlabel{
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-style: italic;
+	font-family: serif;
+	font-size: 20px;
+}
+form{
+	margin-top: 30px;
+}
+select{
+	padding: 4px;
+	margin-bottom: 12px;
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+.leaflet-left .leaflet-control{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.leaflet-container .leaflet-control-attribution{
+	color: #000;
+}
+.leaflet-control-attribution a{
+	color: #000;
+}
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
+	border: 2px solid #000;
+}
+.light{
+	color: #ccc;
+}
