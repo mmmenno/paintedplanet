@@ -3,18 +3,11 @@
 //include("functions.php");
 
 $sparql = "
-SELECT ?country ?countryLabel (COUNT(?i) AS ?nr) WHERE {
+SELECT ?i ?iLabel WHERE {
   ?i wdt:P31 wd:Q3305213 .
-  ?i wdt:P136 wd:Q191163 .
-  ?i wdt:P180 ?beeldtaf .
-  ?beeldtaf wdt:P625 ?coords .
-  ?beeldtaf wdt:P17 ?country .
-  MINUS { ?country wdt:P576 ?end }
-  ?i wdt:P18 ?afb .
   SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }
 }
-GROUP BY ?country ?countryLabel
-ORDER BY ASC(?countryLabel)
+LIMIT 10
 ";
 
 $endpoint = 'https://query.wikidata.org/sparql';
