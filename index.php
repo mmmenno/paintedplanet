@@ -35,6 +35,8 @@ include("options.php");
   <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js" integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA==" crossorigin=""></script>
   <link rel="stylesheet" href="styles.css" />
 
+  <script defer data-domain="hicsuntleones.nl" src="https://plausible.io/js/plausible.js"></script>
+
   
 </head>
 <body>
@@ -105,13 +107,13 @@ include("options.php");
 
   function createMap(){
     center = [52.381016, 4.637126];
-    zoomlevel = 3;
+    zoomlevel = 6;
     
     map = L.map('bigmap', {
           center: center,
           zoom: zoomlevel,
           minZoom: 1,
-          maxZoom: 20,
+          maxZoom: 19,
           scrollWheelZoom: true,
           zoomControl: false
       });
@@ -120,13 +122,11 @@ include("options.php");
         position: 'bottomright'
     }).addTo(map);
 
-    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}', {
-  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  subdomains: 'abcd',
-  minZoom: 0,
-  maxZoom: 20,
-  ext: 'png'
-}).addTo(map);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
   }
 
   function refreshMap(){
