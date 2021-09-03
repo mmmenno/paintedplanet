@@ -16,8 +16,8 @@ LIMIT 10
 $endpointUrl = 'https://query.wikidata.org/sparql';
 $url = $endpointUrl . '?query=' . urlencode($sparql) . "&format=json";
 
-echo $url;
-die;
+//echo $url;
+//die;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -33,6 +33,7 @@ curl_close ($ch);
 
 $data = json_decode($response, true);
 
+echo "hier dan";
 print_r($data);
 
 
