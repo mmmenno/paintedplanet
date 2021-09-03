@@ -105,7 +105,7 @@ include("options.php");
 
   function createMap(){
     center = [52.381016, 4.637126];
-    zoomlevel = 16;
+    zoomlevel = 3;
     
     map = L.map('bigmap', {
           center: center,
