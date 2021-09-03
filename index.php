@@ -87,7 +87,7 @@ if(!file_exists(__DIR__ . "/geojson/" . $qcountry . ".geojson") || isset($_GET['
     });
 
     createMap();
-    refreshMap();
+    //refreshMap();
 
     $('#overlay').click(function(){
       $('#bigpic').empty();
