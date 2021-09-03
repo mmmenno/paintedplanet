@@ -126,8 +126,8 @@ a{
 	text-decoration: none;
 }
 .leaflet-left .leaflet-control{
-	margin-top: 10px;
-	margin-left: 10px;
+	margin-bottom: 30px;
+	margin-left: 30px;
 }
 .leaflet-container .leaflet-control-attribution{
 	color: #000;

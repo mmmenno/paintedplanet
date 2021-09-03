@@ -22,7 +22,7 @@
 
   <style type="text/css">
     body{
-      background-image:    url(https://upload.wikimedia.org/wikipedia/commons/0/0d/Volga_lagoon.jpg?width=1000);
+      background-image:    url(https://upload.wikimedia.org/wikipedia/commons/7/76/Princess_Alice%2C_Grand_Duchess_of_Hesse_%5E_by_Rhine%2C_consort_of_Ludwig_IV%2C_Grand_Duke_of_Hesse_%5E_by_Rhine_%281843-78%29_-_Lochnagar_from_the_Sluggan_-_RCIN_403863_-_Royal_Collection.jpg?width=1000);
       margin-top: 0;  
       background-size:     cover;                      /* <------ */
       background-repeat:   no-repeat;
@@ -110,8 +110,6 @@
 
 
 
-
-https://w.wiki/3$NF
 
 </body>
 </html>

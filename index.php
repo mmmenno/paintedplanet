@@ -62,7 +62,7 @@ include("options.php");
     </select>
   </form>
 
-  <p>Missing paintings? Please read our <a href="howto.php">how-to add paintings to the map</a> section.</p>
+  <p>Missing paintings? Please read the <a href="howto.php">how-to add paintings to the map</a> section.</p>
   
 </div>
 
@@ -119,7 +119,7 @@ include("options.php");
       });
 
     L.control.zoom({
-        position: 'bottomright'
+        position: 'bottomleft'
     }).addTo(map);
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
