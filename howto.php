@@ -18,6 +18,8 @@
   <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js" integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA==" crossorigin=""></script>
   <link rel="stylesheet" href="styles.css" />
 
+  <script defer data-domain="hicsuntleones.nl" src="https://plausible.io/js/plausible.js"></script>
+
   <style type="text/css">
     body{
       background-image:    url(https://upload.wikimedia.org/wikipedia/commons/0/0d/Volga_lagoon.jpg?width=1000);
