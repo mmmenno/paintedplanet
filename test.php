@@ -17,12 +17,12 @@ $endpointUrl = 'https://query.wikidata.org/sparql';
 $url = $endpointUrl . '?query=' . urlencode($sparql) . "&format=json";
 
 echo $url;
-//die;
+die;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-curl_setopt($ch,CURLOPT_USERAGENT,'MonumentMap');
+curl_setopt($ch,CURLOPT_USERAGENT,'RotterdamsPubliek');
 $headers = [
     'Accept: application/sparql-results+json'
 ];
