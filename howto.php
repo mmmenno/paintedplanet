@@ -70,7 +70,7 @@
 
   <p>The landscapes give an idea of what places once looked like (to the painter). Maybe they will provide a pleasant stop during an armchair travelling trip. Maybe they will add something to your 'sense of place' of a place.</p>
 
-  <p>Maybe they will even spark a wish to <a href="https://rewildingeurope.com/what-is-rewilding-2/">rewild</a> parts of the planet.</p>
+  <p>And maybe they will spark a wish to <a href="https://rewildingeurope.com/what-is-rewilding-2/">rewild</a> parts of the planet.</p>
   
 </div>
 
