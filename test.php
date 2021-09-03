@@ -3,9 +3,8 @@
 //include("functions.php");
 
 $sparql = "
-SELECT ?i ?iLabel WHERE {
+SELECT ?i WHERE {
   ?i wdt:P31 wd:Q3305213 .
-  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }
 }
 LIMIT 10
 ";
@@ -16,6 +15,8 @@ LIMIT 10
 
 $endpointUrl = 'https://query.wikidata.org/sparql';
 $url = $endpointUrl . '?query=' . urlencode($sparqlQueryString) . "&format=json";
+
+echo $url;
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$url);
