@@ -177,12 +177,12 @@ include("options.php");
   function getSize(props) {
 
     var j = props['cnt'];
-    return  j > 4 ? 8 :
-            j > 3 ? 7 :
-            j > 2 ? 6 :
-            j > 1 ? 5 :
-            j > 0 ? 4 :
-            4;
+    return  j > 4 ? 10 :
+            j > 3 ? 9 :
+            j > 2 ? 8 :
+            j > 1 ? 7 :
+            j > 0 ? 6 :
+            6;
   }
 
 function whenClicked(){
