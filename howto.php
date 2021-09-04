@@ -90,6 +90,8 @@
 
 
   <p>This website caches data, but everything is refreshed once a week.</p>
+
+  <p><a target="_blank" href="https://w.wiki/3$Xy">This query</a> selects random landscape paintings without a 'depicts' statement</p>
   
 </div>
 

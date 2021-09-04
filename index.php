@@ -21,7 +21,7 @@ include("options.php");
 <html>
 <head>
   
-<title>Landscapism in <?= $countrynaam ?></title>
+<title>painted planet - <?= $countryname ?></title>
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
