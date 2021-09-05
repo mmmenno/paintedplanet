@@ -197,17 +197,22 @@ function whenClicked(){
 
   $.each(props.paintings, function( key, value ) {
 
-    var pic = $("<img />").attr("src",value['img'] + '?width=300');
+    var pic = $("<img />").attr("src",value['img'] + '?width=400');
     pic.click(function(){
       console.log(value);
-      $("#bigpic").empty();
-      var bigpic = $("<img />").attr("src",value['img'] + '?width=1000');
-      //bigpic.css("height","50%");
-      $("#bigpic").append(bigpic);
-      var bigpictxt = $("<p></p>").text(value['maker'] + ", " + value['title'] + ", " + value['date']);
-      $("#bigpictxt").append(bigpictxt);
-      $("#overlay").show();
-      $("#overlaycontent").show();
+      if($(window).width() < 900) {
+        window.open(value['img']);
+        return false;
+      }else{
+        $("#bigpic").empty();
+        var bigpic = $("<img />").attr("src",value['img'] + '?width=1000');
+        //bigpic.css("height","50%");
+        $("#bigpic").append(bigpic);
+        var bigpictxt = $("<p></p>").text(value['maker'] + ", " + value['title'] + ", " + value['date']);
+        $("#bigpictxt").append(bigpictxt);
+        $("#overlay").show();
+        $("#overlaycontent").show();
+      }
     });
 
     $("#pics").append(pic);

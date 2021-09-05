@@ -16,9 +16,21 @@ html, body{
 	}
 	#legenda{
 		background-color: #000;
-		padding: 20px;
+		padding: 20px 20px 10px 20px;
 		position: static;
 	}
+	#legenda p{
+		display: none;
+	}
+	#location{
+		background-color: #000;
+		padding: 0 20px 20px 20px;
+		position: static;
+	}
+	form{
+		margin-top: 8px;
+	}
+
 }
 @media only screen and (min-width: 900px) {
   	#bigmap {
@@ -50,6 +62,10 @@ html, body{
 		max-height: 85%;
 		overflow-y: scroll;
 	}
+	form{
+		margin-top: 30px;
+	}
+
 }
 #overlay{
 	background-color: #000;
@@ -93,29 +109,6 @@ h1{
 	float: left;
 	margin-top: 4px;
 	clear: both;
-}
-.bag{
-	background-color: #1DA1CB;
-}
-.legendapoint{
-	background-color: #FC0611;
-	width: 10px;
-	height: 10px;
-	margin-right: 16px;
-	border-radius: 5px;
-	float: left;
-	clear: both;
-	margin-top: 4px;
-}
-#monumentlabel{
-	margin-top: 30px;
-	margin-bottom: 10px;
-	font-style: italic;
-	font-family: serif;
-	font-size: 20px;
-}
-form{
-	margin-top: 30px;
 }
 select{
 	padding: 4px;
