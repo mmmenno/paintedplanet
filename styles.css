@@ -3,10 +3,10 @@ html, body{
 	margin:0;
 	padding-top: 0;
 	font-size: 14px;
-	background-color: #000;
 	color: #ccc;
 	height: 100%;
 	font-family: sans-serif;
+	margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 900px) {
@@ -14,7 +14,7 @@ html, body{
 		width: 100%;
 		height: 60%;
 	}
-	#legenda{
+	#legenda, #intro{
 		background-color: #000;
 		padding: 20px 20px 10px 20px;
 		position: static;
@@ -23,6 +23,29 @@ html, body{
 		display: none;
 	}
 	#location{
+		background-color: #000;
+		padding: 0 20px 20px 20px;
+		position: static;
+	}
+	#intro{
+		border-radius: 12px;
+		margin: 20px;
+	}
+	#main{
+      	background-color: #000;
+		padding: 20px;
+		position: static;
+		border-radius: 12px;
+		margin: 20px;
+    }
+    #bias{
+      	background-color: #000;
+		padding: 20px;
+		position: static;
+		border-radius: 12px;
+		margin: 20px;
+    }
+	#smallscreen{
 		background-color: #000;
 		padding: 0 20px 20px 20px;
 		position: static;
@@ -38,7 +61,7 @@ html, body{
 		width: 100%;
 		height: 100%;
 	}
-	#legenda{
+	#legenda, #intro{
 		position: absolute;
 		z-index: 10000;
 		left: 30px;
@@ -62,8 +85,35 @@ html, body{
 		max-height: 85%;
 		overflow-y: scroll;
 	}
+	#main{
+		position: absolute;
+		left: 360px;
+		top: 30px;
+		width: 250px;
+		background-color: #000;
+		border-radius: 12px;
+		padding: 20px;
+		margin-bottom: 30px;
+		max-height: 85%;
+		overflow-y: scroll;
+    }
+    #bias{
+		position: absolute;
+		left: 690px;
+		top: 30px;
+		width: 250px;
+		background-color: #000;
+		border-radius: 12px;
+		padding: 20px;
+		margin-bottom: 30px;
+		max-height: 85%;
+		overflow-y: scroll;
+    }
 	form{
 		margin-top: 30px;
+	}
+	#smallscreen{
+		display: none;
 	}
 
 }
@@ -101,22 +151,13 @@ h1{
 	width: 100%;
 	cursor: pointer;
 }
-.bag, .nobag, .bagcomplex, .nobagok {
-	width: 30px;
-	height: 10px;
-	border-width: 2px;
-	margin-right: 10px;
-	float: left;
-	margin-top: 4px;
-	clear: both;
-}
 select{
 	padding: 4px;
 	margin-bottom: 12px;
 }
 a{
 	color: #fff;
-	text-decoration: none;
+	text-decoration: underline;
 }
 .leaflet-left .leaflet-control{
 	margin-bottom: 30px;
@@ -130,7 +171,4 @@ a{
 }
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
 	border: 2px solid #000;
-}
-.light{
-	color: #ccc;
 }

@@ -26,32 +26,14 @@
       margin-top: 0;  
       background-size:     cover;                      /* <------ */
       background-repeat:   no-repeat;
-      background-position: center center;  
+      background-position: center center; 
+      background-attachment: fixed; 
+    
     }
-    #main{
-      position: fixed;
-      left: 360px;
-      top: 30px;
-      width: 250px;
-      background-color: #000;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      max-height: 85%;
-      overflow-y: scroll;
+    @media only screen and (max-width: 900px) {
+      background-size: auto 100%;
     }
-    #bias{
-      position: fixed;
-      left: 690px;
-      top: 30px;
-      width: 250px;
-      background-color: #000;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      max-height: 85%;
-      overflow-y: scroll;
-    }
+    
     ul{
       padding-left: 16px;
     }
@@ -62,15 +44,15 @@
 
 
 
-<div id="legenda">
+<div id="intro">
   <h1><a href="index.php">The Painted Planet</a></h1>
 
   <p>This website shows landscape paintings from Wikidata, as <a href="https://w.wiki/3$M4">queried</a> from the Wikidata sparql endpoint.</p>
 
 
-  <p>The landscapes give an idea of what places once looked like (to the painter). Maybe they will provide a pleasant stop during an armchair travelling trip. Maybe they will add something to your 'sense of place' of a place.</p>
+  <p>The paintings give an idea of what places once looked like (to the painter). Maybe they will provide a pleasant stop during an armchair travelling trip. Maybe they will add something to your 'sense of place' of a place.</p>
 
-  <p>And maybe they will spark a wish to <a href="https://rewildingeurope.com/what-is-rewilding-2/">rewild</a> parts of the planet.</p>
+  <p>And maybe they will make you ponder <a href="https://rewildingeurope.com/what-is-rewilding-2/">large-scale rewilding</a> for a moment.</p>
   
 </div>
 
@@ -100,15 +82,16 @@
 <div id="bias">
   <h1>Distribution</h1>
 
-  <p>As you <a title="link to query" href="https://w.wiki/3$NF">can see</a>, current data is not distributed equally over countries. Possibly, this is partly explained by the popularity of paintings in the Western world.</p>
+  <p>As you <a title="link to query" href="https://w.wiki/3$NF">can see</a>, current data is not distributed equally over countries. Possibly, this is partly explained by the popularity of painting as an artform in the Western world.</p>
 
   <img style="width: 100%" src="art/bubbles.jpg" />
 
-  <p>Still, when adding, you might want to consider adding depictions of places in countries that lack in pictorial presence.</p>
+  <p>When adding, you might want to consider adding depictions of places in countries that lack in pictorial presence.</p>
   
 </div>
 
-
+<br />
+<br />
 
 
 

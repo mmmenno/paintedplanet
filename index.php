@@ -37,6 +37,11 @@ include("options.php");
 
   <script defer data-domain="hicsuntleones.nl" src="https://plausible.io/js/plausible.js"></script>
 
+  <style type="text/css">
+    body{
+      background-color: #000;
+    }
+  </style>
   
 </head>
 <body>
@@ -62,7 +67,7 @@ include("options.php");
     </select>
   </form>
 
-  <p>Missing paintings? Please read the <a href="howto.php">how-to add paintings to the map</a> section.</p>
+  <p>Any paintings missing? Please read the <a href="howto.php">how-to add paintings to the map</a> section.</p>
   
 </div>
 
@@ -72,6 +77,12 @@ include("options.php");
   <div id="pics"></div>
   
 </div>
+
+
+<div id="smallscreen">
+  <p>All data from Wikidata. Read more on the data used and how to add paintings to the map <a href="howto.php">here</a>.</p>
+</div>
+
 
 
 <div id="overlay"></div>
