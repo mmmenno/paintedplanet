@@ -228,9 +228,9 @@ function whenClicked(){
 
     $("#pics").append(pic);
 
-    var link = $("<a></a>").html('<img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Wikidata-logo.svg" style="width:20px;" /> ');
+    var link = $("<a></a>").html('<img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Wikidata-logo.svg" style="width:24px; margin-right:6px;" />');
     link.attr("href","http://www.wikidata.org/entity/" + key);
-    link.attr("target","_blank");
+    //link.attr("target","_blank");
 
     var txt = $("<p></p>").text(value['title']);
 
