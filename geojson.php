@@ -2,10 +2,16 @@
 
 ini_set('memory_limit', '1024M');
 
+if($scape == "city"){
+	$qscape = "Q1935974";
+}else{
+	$qscape = "Q191163";
+}
+
 $sparql = "
 SELECT ?i ?iLabel ?creatorLabel ?createdate ?img ?depicts ?depictsLabel ?coords WHERE {
   ?i wdt:P31 wd:Q3305213 .
-  ?i wdt:P136 wd:Q191163 .
+  ?i wdt:P136 wd:" . $qscape . " .
   ?i wdt:P180 ?depicts .
   OPTIONAL{
     ?i wdt:P170 ?creator .
@@ -87,7 +93,7 @@ foreach ($locations as $k => $v) {
 
 $json = json_encode($fc);
 
-file_put_contents("geojson/" . $qcountry . '.geojson', $json);
+file_put_contents("geojson-" . $scape . "/" . $qcountry . '.geojson', $json);
 
 
 

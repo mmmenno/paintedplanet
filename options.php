@@ -1,9 +1,17 @@
 <?
 
+
+if($scape == "city"){
+    $qscape = "Q1935974";
+}else{
+    $qscape = "Q191163";
+}
+
+
 $sparql = "
 SELECT ?country ?countryLabel (COUNT(?i) AS ?nr) WHERE {
   ?i wdt:P31 wd:Q3305213 .
-  ?i wdt:P136 wd:Q191163 .
+  ?i wdt:P136 wd:" . $qscape . " .
   ?i wdt:P180 ?beeldtaf .
   ?beeldtaf wdt:P625 ?coords .
   ?beeldtaf wdt:P17 ?country .

@@ -9,7 +9,18 @@ if(isset($_GET['country'])){
   $qcountry = "Q55";
 }
 
-if(!file_exists(__DIR__ . "/geojson/" . $qcountry . ".geojson") || isset($_GET['uncache'])){
+if(isset($_GET['scape']) && $_GET['scape'] == "city"){
+  $scape = "city";
+  $otherscape = "land";
+  $markercolor = "#5354ea";
+}else{
+  $scape = "land";
+  $otherscape = "city";
+  $markercolor = "#f60000";
+}
+
+
+if(!file_exists(__DIR__ . "/geojson-" . $scape . "/" . $qcountry . ".geojson") || isset($_GET['uncache'])){
   include("geojson.php");
 }
 
@@ -59,15 +70,20 @@ include("options.php");
 <div id="legenda">
   <h1>The Painted Planet</h1>
 
-  <p>Landscapes from Wikidata, depicting things with coordinates, in ...</p>
+  <p id="introline"><?= ucfirst($scape) ?>scapes from Wikidata, depicting things with coordinates, in ...</p>
 
   <form>
     <select name="country">
+      <option value="Q55">choose country</option>
       <?php echo $options ?>
     </select>
+
+    <input type="hidden" name="scape" value="<?= $scape ?>">
   </form>
 
   <p>Any paintings missing? Please read the <a href="howto.php">how-to add paintings to the map</a> section.</p>
+
+  <p>Switch to <a href="?country=<?= $qcountry ?>&scape=<?= $otherscape ?>"><?= $otherscape ?>scapes</a>.</p>
   
 </div>
 
@@ -144,7 +160,7 @@ include("options.php");
 
     $.ajax({
           type: 'GET',
-          url: 'geojson/<?= $qcountry ?>.geojson',
+          url: 'geojson-<?= $scape ?>/<?= $qcountry ?>.geojson',
           dataType: 'json',
           success: function(jsonData) {
             if (typeof streets !== 'undefined') {
@@ -154,7 +170,7 @@ include("options.php");
             streets = L.geoJson(null, {
               pointToLayer: function (feature, latlng) {                    
                   return new L.CircleMarker(latlng, {
-                      color: "#FC2211",
+                      color: "<?= $markercolor ?>",
                       radius:4,
                       weight: 0,
                       opacity: 0.8,
@@ -175,8 +191,16 @@ include("options.php");
               }).addTo(map);
 
               streets.addData(jsonData).bringToFront();
-          
-              map.fitBounds(streets.getBounds());
+
+              var totalPins = streets.getLayers().length;
+              
+              console.log(totalPins);
+
+              if(totalPins > 0){
+                map.fitBounds(streets.getBounds());
+              }else{
+                $('#introline').html('No results in selected country');
+              }
               //$('#straatinfo').html('');
           },
           error: function() {
