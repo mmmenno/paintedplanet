@@ -20,7 +20,10 @@ if(isset($_GET['scape']) && $_GET['scape'] == "city"){
 }
 
 
-if(!file_exists(__DIR__ . "/geojson-" . $scape . "/" . $qcountry . ".geojson") || isset($_GET['uncache'])){
+$geojsonfile = __DIR__ . "/geojson-" . $scape . "/" . $qcountry . ".geojson";
+if(!file_exists($geojsonfile) || isset($_GET['uncache'])){
+  include("geojson.php");
+}elseif (time()-filemtime($geojsonfile) > 60*60*24*7) {
   include("geojson.php");
 }
 
