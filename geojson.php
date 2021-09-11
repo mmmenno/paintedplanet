@@ -51,7 +51,7 @@ foreach ($data['results']['bindings'] as $k => $v) {
 	$paintingid = str_replace("http://www.wikidata.org/entity/","",$v['i']['value']);
 	$locations[$qid]['paintings'][$paintingid] = array(
 		"title" => $v['iLabel']['value'],
-		"img" => $v['img']['value'],
+		"img" => str_replace("http:","https:",$v['img']['value']),
 		"maker" => $v['creatorLabel']['value'],
 		"date" => substr($v['createdate']['value'],0,4)
 	);
