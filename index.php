@@ -164,7 +164,7 @@ include("options.php");
 
     $.ajax({
           type: 'GET',
-          url: 'geojson-<?= $scape ?>/<?= $qcountry ?>.geojson',
+          url: 'geojson-<?= $scape ?>/<?= $qcountry ?>.geojson?day=<?= strftime("%a") ?>',
           dataType: 'json',
           success: function(jsonData) {
             if (typeof streets !== 'undefined') {
