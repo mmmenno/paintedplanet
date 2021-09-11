@@ -4,6 +4,7 @@
 function getSparqlResults($endpoint,$query){
 
 
+
 	// params
 	$url = $endpoint . '?query=' . urlencode($query) . "&format=json";
 	$urlhash = hash("md5",$url);
@@ -12,7 +13,7 @@ function getSparqlResults($endpoint,$query){
 	//$maxcachetime = 60*2;
 
 	// get cached data if recent
-	if(file_exists($datafile)){
+	if(file_exists($datafile) && !isset($_GET['uncache'])){
 		$mtime = filemtime($datafile);
 		$timediff = time() - $mtime;
 		if($timediff < $maxcachetime){
