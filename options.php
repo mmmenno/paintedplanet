@@ -1,4 +1,4 @@
-<?
+<?php
 
 
 if($scape == "city"){
@@ -51,3 +51,5 @@ foreach ($data['results']['bindings'] as $k => $v) {
     }
 
 }
+
+?>

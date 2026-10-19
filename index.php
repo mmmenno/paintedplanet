@@ -3,7 +3,9 @@
 include("functions.php");
 
 
-if(isset($_GET['country'])){
+if(isset($_GET['country']) && !preg_match("/^Q[0-9]+$/",$_GET['country'])){
+  $qcountry = "Q219060";
+}elseif(isset($_GET['country'])){
   $qcountry = $_GET['country'];
 }else{
   $qcountry = "Q55";
@@ -153,10 +155,11 @@ include("options.php");
         position: 'bottomleft'
     }).addTo(map);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19
+    L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.{ext}', {
+      minZoom: 0,
+      maxZoom: 20,
+      attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      ext: 'png'
     }).addTo(map);
   }
 
